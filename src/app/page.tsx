@@ -1,9 +1,9 @@
 import styles from './page.module.css';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Header from '@/components/Header';
-import TitleBar from '@/components/TitleBar';
-import WorkHistory from '@/components/WorkHistory';
+import About from '@/features/about/About';
+import Experience from '@/features/experience/Experience';
+import Header from '@/features/header/Header';
+import TitleBar from '@/features/titleBar/TitleBar';
+import WorkHistory from '@/features/workHistory/WorkHistory';
 
 export default function Page() {
   return (
