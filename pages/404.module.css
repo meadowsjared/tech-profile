@@ -1,0 +1,178 @@
+.container {
+  --malfunction-time: 0.9s;
+  --bumped-time: 0.5s;
+  --color-primary: #007bff;
+  --color-primary-hover: #0056b3;
+  --glow-color-alternate: #8181815b;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  display: flex;
+  height: 100vh;
+  margin: auto;
+}
+
+.content {
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  width: min-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  cursor: pointer;
+  user-select: none;
+}
+
+.errorCode {
+  font-size: 8rem;
+  margin: 0 10px;
+  color: #333;
+  position: relative;
+}
+
+.errorCode.bumped:last-child {
+  margin-left: 0;
+}
+
+.errorCode.bumped:nth-child(2) {
+  margin-right: 0;
+}
+
+.errorCode.malfunction.bumped {
+  transform-origin: calc(100% - 0.9rem) calc(100% - 2rem);
+  animation: malfunction var(--malfunction-time) infinite alternate ease-in-out;
+}
+
+.errorCode.leaning {
+  /* transform: translate(-1rem, -16rem) rotate(-50deg); */
+  transform-origin: calc(100% - 0.9rem) calc(100% - 2rem);
+  /* animation: leaning-drop 2.5s normal forwards; */
+  animation: leaning-drop 1.0s forwards;
+  /* animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.4, 0.06, 1, .6);   */
+}
+
+@keyframes leaning-drop {
+  0% { /* falling */
+    transform: translate(-1rem, -16rem) rotate(-50deg);
+  }
+  30% { /* 1st landing */
+    transform: translate(-1rem, 2rem) rotate(-50deg);
+  }
+  50% { /* 1st bounce */
+    transform: translate(-1rem, -5rem) rotate(-20deg);
+  }
+  75% { /* 2nd landing */
+    transform: translate(-0.5rem, 0) rotate(-20deg);
+  }
+  90% { /* 2nd bounce */
+    transform: translate(0.5rem, -3rem) rotate(10deg);
+  }
+  100% { /* 3rd landing */
+    transform: translate(0, 0) rotate(31deg);
+  }
+}
+
+.bumped {
+  transform: translate(0, 0) rotate(31deg);
+  animation: bumped var(--bumped-time) ease-in-out forwards;
+}
+.errorCode.errorCode.leaning.bumped {
+  animation: bumped-leaning var(--bumped-time) ease-in-out forwards;
+}
+
+@keyframes bumped-leaning {
+  0% {
+    transform: rotate(31deg);
+  }
+  100% {
+    transform: rotate(33deg);
+  }
+}
+
+@keyframes bumped {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes malfunction {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+  0% {
+    transform: rotate(-10deg);
+  }
+}
+
+.glowingText {
+  --glow-color: var(--color-primary);
+  animation: glowText var(--malfunction-time) infinite alternate ease-in-out;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px var(--glow-color-alternate), 0 0 10px var(--glow-color-alternate), 0 0 15px var(--glow-color), 0 0 20px var(--glow-color), 0 0 25px var(--glow-color), 0 0 30px var(--glow-color), 0 0 35px var(--glow-color);
+  }
+  100% {
+    text-shadow: 0 0 20px var(--glow-color-alternate), 0 0 20px var(--glow-color-alternate), 0 0 30px var(--glow-color), 0 0 40px var(--glow-color), 0 0 50px var(--glow-color), 0 0 60px var(--glow-color), 0 0 70px var(--glow-color);
+  }
+}
+
+.errorMessage {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #666;
+}
+
+.errorDescription {
+  color: #888;
+}
+
+.goBackLink {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.goBackLink:hover {
+  background-color: var(--color-primary-hover);
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #1a1a1a;
+  }
+
+  .content {
+    background-color: #333;
+    border-color: #444;
+  }
+
+  .errorCode, .errorMessage, .errorDescription {
+    color: #eee;
+  }
+
+  .goBackLink {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+}
