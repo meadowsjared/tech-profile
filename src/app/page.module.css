@@ -6,6 +6,8 @@
   max-width: 50rem;
   margin: auto;
   background: #424242;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .description {
