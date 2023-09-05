@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  entities: [],
-  loading: false,
+interface UserState {
+  name: string;
+  email: string;
+  githubLink: string;
+  linkedInLink: string;
+}
+
+const initialState: UserState = {
+  name: "Jared Meadows",
   email: "meadowsjared@gmail.com",
   githubLink: "https://github.com/meadowsjared",
   linkedInLink: "https://www.linkedin.com/in/jared-meadows/",
