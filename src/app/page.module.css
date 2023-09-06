@@ -5,8 +5,8 @@
   align-items: center;
   max-width: 50rem;
   margin: auto;
-  background: #424242;
-  border-radius: 1rem;
+  background: var(--color-surface-300);
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
