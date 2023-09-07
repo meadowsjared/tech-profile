@@ -1,25 +1,22 @@
 .container {
   --malfunction-time: 0.9s;
   --bumped-time: 0.5s;
-  --color-primary: #007bff;
-  --color-primary-hover: #0056b3;
-  --glow-color-alternate: #8181815b;
+  --glow-color-alternate: var(--color-surface-100);
   justify-content: center;
   align-items: center;
-  overflow: visible;
   display: flex;
-  height: 100vh;
-  margin: auto;
+  height: 100vh; /* for IE */
+  height: 100dvh;
 }
 
 .content {
+  box-shadow: 2px 2px 5px var(--color-surface-600);
   text-align: center;
   border: 2px solid #ccc;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 20px;
   background-color: #fff;
   width: min-content;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .errorWrapper {
@@ -119,7 +116,7 @@
 }
 
 .glowingText {
-  --glow-color: var(--color-primary);
+  --glow-color: var(--color-primary-100);
   animation: glowText var(--malfunction-time) infinite alternate ease-in-out;
 }
 
@@ -146,33 +143,33 @@
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  border-radius: 5px;
-  background-color: var(--color-primary);
+  border-radius: var(--button-border-radius);
+  background-color: var(--color-primary-100);
   color: #fff;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .goBackLink:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--color-primary-200);
 }
 
 @media (prefers-color-scheme: dark) {
   .container {
-    background-color: #1a1a1a;
+    background-color: var(--color-surface-100);
   }
 
   .content {
-    background-color: #333;
-    border-color: #444;
+    background-color: var(--color-surface-300);
+    border-color: var(--color-surface-300);
   }
 
   .errorCode, .errorMessage, .errorDescription {
-    color: #eee;
+    color: var(--color-primary-1000);
   }
 
   .goBackLink {
-    background-color: var(--color-primary);
-    color: #fff;
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-1000);
   }
 }
