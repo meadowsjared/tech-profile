@@ -33,12 +33,6 @@ export default function Error404() {
       <Head>
         <link rel="shortcut icon" href="/resume/favicon.ico" />
       </Head>
-      <style global jsx>{`
-        body {
-          overflow: hidden;
-          margin: 0;
-        }
-      `}</style>
       <div className={styles.content}>
         <div className={styles.errorWrapper} onClick={() => animateBumped()}>
           <h1
