@@ -12,12 +12,12 @@ export default function Header() {
     <header className={style.header}>
       <div
         className={style.parent}
-        onMouseMove={handleMouseMove}
-        onClick={handleClick}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onMouseOut={handleMouseOut}
-        onTouchEnd={handleMouseOut}
+{/*         onMouseMove={handleMouseMove} */}
+{/*         onClick={handleClick} */}
+{/*         onTouchStart={handleTouchStart} */}
+{/*         onTouchMove={handleTouchMove} */}
+{/*         onMouseOut={handleMouseOut} */}
+{/*         onTouchEnd={handleMouseOut} */}
       >
         <div className={style.bg}>
           <div
