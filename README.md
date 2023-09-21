@@ -32,3 +32,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+[**Angular convention**](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum)
+Commit messages must have types according to commitlint-config-conventional can be:
+
+* build
+* chore
+* ci
+* docs
+* feat
+* fix
+* perf
+* refactor
+* revert
+* style
+* test
+
+For more information, see the [commitlint documentation](https://commitlint.js.org/#/reference-rules?id=type-enum).
