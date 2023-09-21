@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import style from "./Header.module.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Header() {
 
