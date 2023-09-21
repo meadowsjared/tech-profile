@@ -9,7 +9,7 @@ export default function Header() {
   const { name } = useSelector((state: RootState) => state.user);
 
   return (
-    <header className={style.header}>
+    <div className={style.header}>
       <div
         className={style.parent}
 {/*         onMouseMove={handleMouseMove} */}
@@ -48,6 +48,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
