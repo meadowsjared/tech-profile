@@ -1,5 +1,9 @@
 import type { Config } from "jest";
 
+// 9/23/23
+// https://github.com/jestjs/jest/issues/14046#issuecomment-1732350642
+// Note: jest --watch is broken until this is fixed if you have sl installed due to a conflict with Sapling
+
 const config = async (): Promise<Config> => {
   return {
     preset: "ts-jest",
