@@ -12,6 +12,8 @@
   --color-primary-800: #dfe0ff;
   --color-primary-900: #f5eeff;
   --color-primary-1000: #ffffff;
+  --color-text-dark-bg: #ffffff;
+  --color-text-light-bg: #000000;
 
   /** CSS DARK THEME SURFACE COLORS */
   --color-surface-100: #000000;
@@ -141,4 +143,19 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/resume/assets/font/Tajawal/Tajawal-Light.ttf');
+  src: url('/resume/assets/font/Tajawal/Tajawal-Medium.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Baloo Chettan';
+  src: url('/resume/assets/font/BalooChettan/BalooChettan2-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
 }
