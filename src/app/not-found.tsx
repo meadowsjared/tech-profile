@@ -1,30 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./not-found.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function Error404() {
+export default function NotFound() {
   const [bumped, setBumped] = useState(false);
-  const dropElement = useRef<HTMLHeadingElement | null>(null);
+  const [animationKey, setAnimationKey] = useState(0);
 
   function animateBumped() {
-    // if (!bumped) return; // bumped === false, don't do anything, because it's already moving
-    // set it to not bumped, which will trigger handleAnimationEnd to set it to bumped
-    setBumped(false);
-    dropElement.current
-      ?.getAnimations()
-      .forEach((animation: Animation & { animationName?: string }) => {
-        if (animation.animationName === styles.dropping) {
-          animation.cancel();
-          requestAnimationFrame(() => {
-            animation.play();
-          });
-        } else {
-          animation.cancel();
-        }
-      });
+    if (bumped) {
+      setBumped(false); // this will be enough to restart the animation
+      return;
+    }
+    setAnimationKey(animationKey + 1); // this will change the key and restart the animation
   }
 
   function handleAnimationEnd() {
@@ -45,7 +35,7 @@ export default function Error404() {
           <h1
             className={styles.dropLeaning}
             onAnimationEnd={handleAnimationEnd}
-            ref={dropElement}
+            key={animationKey}
           >
             4
           </h1>

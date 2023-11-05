@@ -47,7 +47,6 @@
 }
 
 .errorWrapper.bumped .dropLeaning {
-  transform: rotate(var(--drop-end-rotation));
   animation: droppedLeaning calc(var(--drop-lean-duration) + var(--malfunction-delay)) ease-in forwards;
 }
 
