@@ -34,6 +34,7 @@
   cursor: pointer;
   user-select: none;
   font-family: 'Times New Roman', Times, serif;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight color on mobile devices */
 }
 
 .errorWrapper * {
