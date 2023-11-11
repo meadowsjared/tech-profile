@@ -1,0 +1,130 @@
+.bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.movingStarsParent {
+  position: relative;
+  width: 100%;
+  height: calc(100%);
+  overflow: hidden;
+  display: flex;
+}
+
+.backgroundControl {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  transition: transform;
+  transform-style: preserve-3d;
+  transition-timing-function: linear;
+  will-change: transform;
+}
+
+.bgImage {
+  background: url(/resume/assets/img/stars.jpg) no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  position: absolute;
+  width: 200%;
+  height: calc(200%);
+  inset: 0;
+  transform: translate(-25%, -25%);
+}
+
+.helmControl {
+  position: absolute;
+  inset: 0;
+  perspective: 600px;
+  z-index: -1;
+  display: flex;
+}
+
+/* remove animation for users who prefer that */
+@media (prefers-reduced-motion) {
+  .helmControl {
+    display: none;
+  }
+  .bg {
+    pointer-events: none;
+  }
+}
+
+@function generate-stars() {
+  $minX: -2800;
+  $maxX: 3600;
+  $minY: -1417;
+  $maxY: 1620;
+  $stars: ();
+  $numStars: 1000;
+
+  @for $i from 1 through $numStars {
+    $x: random($maxX - $minX + 1) + $minX;
+    $y: random($maxY - $minY + 1) + $minY;
+    // set lightness to a random number between 76% and 100%
+    $lightness: random(25) + 76;
+    $color: hsl(0, 0%, $lightness);
+    $stars: append($stars, $x + px $y + px $color, comma);
+  }
+  @return $stars;
+}
+
+.starLayer {
+  box-shadow: generate-stars();
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  $depths: (-1800px, -1200px, -600px, 0px);
+  $star-opacity: 0.75;
+  opacity: $star-opacity;
+
+  @for $i from 1 through length($depths) - 1 {
+    &:nth-child(#{$i}) {
+      animation: star-field-fly-by-#{$i} 5s linear infinite;
+    }
+  }
+
+  // generate keyframes for each star layer
+  @mixin starField-keyframes($i) {
+    $is-first-child: $i == 1;
+    $is-last-child: $i == length($depths) - 1;
+    $from-depth: nth($depths, $i);
+    $to-depth: nth($depths, $i + 1);
+    @keyframes star-field-fly-by-#{$i} {
+      from {
+        @if $is-first-child {
+          opacity: 0;
+        }
+        transform: translateZ($from-depth);
+      }
+      @if $is-last-child {
+        $partial-percent: 70%;
+        #{$partial-percent} {
+          opacity: $star-opacity;
+        }
+      }
+      to {
+        transform: translateZ($to-depth);
+        @if $is-last-child {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through length($depths) - 1 {
+    @include starField-keyframes($i);
+  }
+}
