@@ -1,0 +1,64 @@
+
+.textContainer {
+  position: relative;
+  display: inline-block;
+  text-wrap: nowrap;
+}
+
+.textStroke {
+  display: inline-block;
+  overflow: visible;
+  z-index: 100;
+  margin-right: 0.09rem;
+}
+
+.strokeParent {
+  overflow: visible;
+}
+
+.strokeBackground {
+  stroke: lightgreen;
+}
+
+// Total length of the path, for example, 100 units
+$totalLength: 50;
+$colors: #5798ff, #dd7066, #f4b400, #1df38c;
+// Length of each dash
+$dashLength: $totalLength / length($colors);
+$total-time: 3s;
+
+.text {
+  fill: none;
+  stroke-width: 1;
+  stroke-linejoin: round;
+  stroke-dasharray: $dashLength #{$totalLength - $dashLength};
+  animation: stroke $total-time infinite linear;
+
+  @for $i from 1 through length($colors) {
+    &:nth-of-type(#{$i}) {
+      stroke: nth($colors, $i);
+      animation-delay: #{($i - 1) * -$total-time / length($colors)};
+    }
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: #{-$totalLength};
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .text {
+    animation: stroke-no-motion $total-time infinite linear;
+  
+
+    @for $i from 1 through length($colors) {
+      &:nth-of-type(#{$i}) {
+        stroke: nth($colors, $i);
+        animation-delay: #{($i - 1) * -$total-time / length($colors)};
+        stroke-dashoffset: #{($i - 1) * $totalLength / length($colors)};
+      }
+    }
+  }
+}
