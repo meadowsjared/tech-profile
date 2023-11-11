@@ -1,0 +1,77 @@
+$glitter-color: rgba(255, 255, 0);
+
+.joy {
+  font-family: Tajawal Light, serif;
+  font-size: 1.2rem;
+  color: $glitter-color;
+  position: relative;
+}
+
+.joy::after {
+  content: '';
+  position: absolute;
+  aspect-ratio: 1;
+  z-index: -1;
+  animation: glitter-twinkle 5s infinite ease-in-out alternate 1s;
+  width: 2px;
+  inset: 0;
+}
+
+// function to generate a fixed list of points with the same color, opacity is set later
+@function generate-glitter($count, $width, $height, $chance: 25) {
+  $shadows: ();
+  $sparkle-color: $glitter-color;
+  $left-overlap: 5;
+  $right-overlap: 3;
+
+  @for $i from 1 through $count {
+    $h-offset: random(ceil($width + $left-overlap + $right-overlap)) - $left-overlap + px; // Random horizontal offset up to 100px
+    $v-offset: random(ceil($height)) + px; // Random vertical offset up to 100px
+    $shadows: append($shadows, ($h-offset $v-offset $sparkle-color), comma);
+  }
+
+  @return $shadows;
+}
+
+// function to randomize the opacity of the glitter
+@function randomize-opacity($glitter, $chance: 50) {
+  $new-glitter: ();
+  // set each piece of glitter to a random opacity
+  @for $i from 1 through length($glitter) {
+    $current-glitter: nth($glitter, $i);
+    $current-color: nth($current-glitter, 3);
+    $coords: nth($current-glitter, 1) nth($current-glitter, 2);
+    $max-opacity: random(75)/100;
+    $new-alpha: if(random(100) <= $chance, $max-opacity, 0); // Opacity either on or off
+    $new-glitter: append($new-glitter, $coords change-color($current-color, $alpha: $new-alpha), comma);
+  }
+  @return $new-glitter;
+}
+
+// Generate the keyframes for the animation
+@keyframes glitter-twinkle {
+  $total-frames: 10; // Total number of frames in the animation
+  $frame-increment: 100% / ($total-frames);
+  // Initial generation of glitter with their opacities
+  $fixed-glitter: generate-glitter(40, 22.83, 26);
+
+  // step through the keyframes and calculate the transitional opacity
+  @for $i from 0 through ($total-frames) { // start with 0%
+    $frame: $i * $frame-increment;
+
+    // process the opacity of the current glitter
+    $new-glitter: randomize-opacity($fixed-glitter);
+
+    #{$frame} {
+      box-shadow: $new-glitter;
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .joy::after {
+    animation: none;
+    $fixed-glitter: generate-glitter(40, 22.83, 26);
+    box-shadow: randomize-opacity($fixed-glitter);
+  }
+}
