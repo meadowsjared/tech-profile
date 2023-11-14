@@ -9,6 +9,10 @@ export default function FancyCreativity() {
         viewBox="0 0 75 25"
         className={style.textStroke}
       >
+        {/* <!-- used for user selection --> */}
+        <text textAnchor="middle" x="50%" y="50%" dy="0.78rem" dx="0.06rem">
+          creativity
+        </text>
         {/* <!-- Symbol --> */}
         <symbol id="s-text" className={style.strokeParent}>
           <text textAnchor="middle" x="50%" y="50%" dy="0.78rem" dx="0.06rem">

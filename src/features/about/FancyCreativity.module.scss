@@ -13,6 +13,9 @@
 
 .strokeParent {
   overflow: visible;
+  text {
+    user-select: none;
+  }
 }
 
 .strokeBackground {
