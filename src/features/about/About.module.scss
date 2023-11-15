@@ -33,6 +33,10 @@ $twisted-orange: #f4b400;
   display: inline-block;
 }
 
+.nowrap {
+  text-wrap: nowrap;
+}
+
 @keyframes twist-text {
   0%,
   50% {
@@ -47,18 +51,28 @@ $twisted-orange: #f4b400;
 }
 
 .delightfulText {
-  span {
+  > .nowrap > span {
     display: inline-block;
     animation: wave 1s infinite alternate;
     animation-delay: calc(var(--i) * 0.1s);
     color: $delightful-green;
   }
 
-  // Get the number of child elements of the string
-  @for $i from 1 through str-length("delight visually") {
-    span:nth-child(#{$i}) {
-      // Example: assigning a CSS variable to each span
-      --i: #{$i};
+  // Initialize a variable to keep count of spans
+  $spanCount: 0; // Get the number of child elements of the string
+
+  @for $i from 1 through str-length("delight ") {
+    > .nowrap:first-child > span:nth-child(#{$i}) {
+      // assign a CSS variable to each span to use for the delay
+      --i: #{$spanCount};
+      $spanCount: $spanCount + 1;
+    }
+  }
+  @for $i from 1 through str-length("visually") {
+    > .nowrap:last-child > span:nth-child(#{$i}) {
+      // assign a CSS variable to each span to use for the delay
+      --i: #{$spanCount};
+      $spanCount: $spanCount + 1;
     }
   }
 }

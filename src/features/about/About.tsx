@@ -87,22 +87,26 @@ export default function About() {
         , my focus is crafting user experiences that not only function
         flawlessly but also{" "}
         <span className={style.delightfulText}>
-          <span>d</span>
-          <span>e</span>
-          <span>l</span>
-          <span>i</span>
-          <span>g</span>
-          <span>h</span>
-          <span>t</span>
-          <span>&nbsp;</span>
-          <span>v</span>
-          <span>i</span>
-          <span>s</span>
-          <span>u</span>
-          <span>a</span>
-          <span>l</span>
-          <span>l</span>
-          <span>y</span>
+          <span className={style.nowrap}>
+            <span>d</span>
+            <span>e</span>
+            <span>l</span>
+            <span>i</span>
+            <span>g</span>
+            <span>h</span>
+            <span>t</span>
+            <span>&nbsp;</span>
+          </span>
+          <span className={style.nowrap}>
+            <span>v</span>
+            <span>i</span>
+            <span>s</span>
+            <span>u</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>y</span>
+          </span>
         </span>
         .
       </p>
