@@ -58,11 +58,11 @@ export default function About() {
         , architecting responsive Vue3 applications that stood as a testament to
         the fusion of form and function, inspired by Figma designs and client
         aspirations. There, I also embraced the role of mentor, guiding seven
-        junior developers through the intricacies of Vue3 and Typescript.
+        junior developers through the intricacies of Vue and Typescript.
       </p>
       <p className={style.description}>
         My toolkit is the product of deep front-end expertise, blending the
-        dynamic capabilities of Vue2.7 and Vue3 with the structural might of{" "}
+        dynamic capabilities of Vue with the structural might of{" "}
         <Link href="https://angular.io/" target="angular">
           Angular
         </Link>
