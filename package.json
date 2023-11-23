@@ -10,7 +10,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "commitlint": "commitlint --edit",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "me_small": "node ./src/utils/base64Image.js me_small",
+    "stars_small": "node ./src/utils/base64Image.js stars_small"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
