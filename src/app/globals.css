@@ -18,6 +18,7 @@
   /** CSS DARK THEME SURFACE COLORS */
   --color-surface-100: #000000;
   --color-surface-200: #1e1e1e;
+  --color-surface-250: #2b2b2b;
   --color-surface-300: #353535;
   --color-surface-400: #4e4e4e;
   --color-surface-500: #696969;
@@ -146,21 +147,24 @@ a {
 
 @font-face {
   font-family: 'Tajawal';
-  src: url('/resume/assets/font/Tajawal/Tajawal-Medium.ttf');
+  font-display: swap;
+  src: url('/resume/assets/font/Tajawal/Tajawal-Medium.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Tajawal Light';
-  src: url('/resume/assets/font/Tajawal/Tajawal-Light.ttf');
+  font-display: swap;
+  src: url('/resume/assets/font/Tajawal/Tajawal-Light.ttf') format("truetype");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Baloo Chettan';
-  src: url('/resume/assets/font/BalooChettan/BalooChettan2-Regular.ttf');
+  font-display: swap;
+  src: url('/resume/assets/font/BalooChettan/BalooChettan2-Regular.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
 }
