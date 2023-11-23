@@ -2,16 +2,12 @@ $delightful-green: #1df38c;
 $twisted-orange: #f4b400;
 
 .greeting {
-  font:
-    500 2rem Baloo Chettan,
-    serif;
+  font-size: 2rem;
   padding: 1rem 1rem 0 1rem;
 }
 
 .description {
-  font:
-    1.3rem "Tajawal Light",
-    serif;
+  font-size: 1.3rem;
   padding: 0;
   margin: 1rem;
   gap: 0;
@@ -22,7 +18,7 @@ $twisted-orange: #f4b400;
 
 .description a {
   display: inline-block;
-  color: var(--color-primary-300);
+  color: var(--color-primary-400);
   text-decoration: underline;
 }
 

@@ -2,11 +2,22 @@ import style from "./About.module.scss";
 import Link from "next/link";
 import FancyCreativity from "./FancyCreativity";
 import FancyJoy from "./FancyJoy";
+import localFont from "next/font/local";
+const balooChettan = localFont({
+  src: "../../../public/assets/font/BalooChettan/BalooChettan2-Regular.ttf",
+  preload: true,
+});
+const tajawal = localFont({
+  src: "../../../public/assets/font/Tajawal/Tajawal-Light.ttf",
+  preload: true,
+});
 
 export default function About() {
   return (
-    <div>
-      <h3 className={style.greeting}>Hey, I’m Jared</h3>
+    <div className={tajawal.className}>
+      <h3 className={`${style.greeting} ${balooChettan.className}`}>
+        Hey, I’m Jared
+      </h3>
       <p className={style.description}>
         At my core, I’m an explorer in the realm of front-end development,
         always on the quest to craft interfaces that are as intuitive as they
