@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 60rem;
+  max-width: 59rem;
   margin: auto;
   background: var(--color-surface-300);
   border-radius: var(--border-radius);
