@@ -3,6 +3,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import style from "./Header.module.css";
 import MovingStars from "../movingStars/MovingStars";
+import me from "../../../public/assets/img/me_large.webp";
+import meSmallBase64 from "../../../public/assets/img/me_small_base64";
+import localFont from "next/font/local";
+
+const tajawal = localFont({
+  src: "../../../public/assets/font/Tajawal/Tajawal-Light.ttf",
+  preload: true,
+});
 
 export default function Header() {
   const user = useSelector((state: RootState) => state.user);
@@ -13,16 +21,17 @@ export default function Header() {
         <MovingStars />
       </div>
       <div className={style.headerContent}>
-        <h1 className={style.name}>{user.name}</h1>
-        <h4 className={style.title}>{user.title}</h4>
+        <h1 className={`${style.name} ${tajawal.className}`}>{user.name}</h1>
+        <h2 className={`${style.title} ${tajawal.className}`}>{user.title}</h2>
         <div className="column heading-column content-column">
           <div className={style.me}>
             <Image
               alt={user.name}
-              src="/resume/assets/img/me.jpg"
-              width={300}
-              height={225}
-              priority={true}
+              src={me}
+              width={206}
+              height={206}
+              placeholder="blur"
+              blurDataURL={meSmallBase64}
             />
           </div>
         </div>
