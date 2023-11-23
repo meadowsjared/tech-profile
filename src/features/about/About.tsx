@@ -45,7 +45,7 @@ export default function About() {
         produced videos that illuminate new features, turning technical updates
         into compelling stories. My dedication to user experience shines through
         in the details, like an{" "}
-        <Link href="resume/asdf" target="404">
+        <Link href="resume/asdf" target="animated404">
           animated 404
         </Link>{" "}
         page that transforms a moment of frustration into a chance for a smile.
