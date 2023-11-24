@@ -86,7 +86,7 @@ $twisted-orange: #f4b400;
 }
 
 @media (prefers-reduced-motion) {
-  .delightfulText span {
+  .delightfulText > .nowrap > span {
     animation: none;
   }
 
