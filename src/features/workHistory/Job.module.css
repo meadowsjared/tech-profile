@@ -1,0 +1,75 @@
+.Job {
+  display: flex;
+  margin: 30px 0;
+}
+
+.details {
+  font-family: "Tajawal Light", sans-serif;
+  min-width: 190px;
+}
+
+.company {
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+}
+
+.Job.right {
+  flex-direction: row-reverse;
+}
+
+.Job.left .details {
+  margin-right: 30px;
+}
+
+.Job.right .details {
+  margin-left: 30px;
+}
+
+.Job p {
+  margin-top: 0;
+}
+
+.Job.coursera .title {
+  margin-bottom: 5px !important;
+}
+
+@media (max-width: 800px) {
+  .Job {
+    display: block;
+  }
+  .details {
+    padding-bottom: 1rem;
+  }
+}
+
+.positionTimeline {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.tenureDate {
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  font-family: "Tajawal Light", sans-serif;
+  font-size: 1.3rem;
+}
+
+.description a {
+  display: inline-block;
+  color: var(--color-primary-300);
+  text-decoration: underline;
+}
