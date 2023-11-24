@@ -8,6 +8,9 @@ import {
   resetDirection,
 } from "@/utils/geometryCalculations";
 import { Vector } from "@/utils/vector";
+import Image from "next/image";
+import stars from "../../../public/assets/img/stars_large.webp";
+import starsSmallBase64 from "../../../public/assets/img/stars_small_base64";
 
 export default function MovingStars() {
   const translateHelmFrom = useRef(new Vector());
@@ -181,7 +184,13 @@ export default function MovingStars() {
           }}
           ref={movingBgRef}
         >
-          <div className={style.bgImage} />
+          <Image
+            className={style.bgImage}
+            alt="background"
+            src={stars}
+            placeholder="blur"
+            blurDataURL={starsSmallBase64}
+          />
         </div>
         <div
           className={style.helmControl}
