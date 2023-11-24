@@ -1,5 +1,4 @@
 $delightful-green: #1df38c;
-$twisted-orange: #f4b400;
 
 .greeting {
   font-size: 2rem;
@@ -23,7 +22,7 @@ $twisted-orange: #f4b400;
 }
 
 .twist {
-  color: $delightful-green;
+  color: var(--color-accent-100);
   animation: twist-text 4s infinite ease-in-out alternate;
   transform-origin: center;
   display: inline-block;
@@ -37,12 +36,12 @@ $twisted-orange: #f4b400;
   0%,
   50% {
     transform: rotate(0deg);
-    color: $delightful-green;
+    color: var(--color-accent-100);
   }
   75%,
   100% {
     transform: rotate(360deg);
-    color: $twisted-orange;
+    color: $delightful-green;
   }
 }
 
