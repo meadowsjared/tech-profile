@@ -1,14 +1,17 @@
 $glitter-color: rgba(255, 255, 0);
 
 .joy {
-  font-family: Tajawal Light, serif;
+  font-family:
+    Tajawal Light,
+    serif;
   font-size: 1.2rem;
   color: $glitter-color;
   position: relative;
+  isolation: isolate;
 }
 
 .joy::after {
-  content: '';
+  content: "";
   position: absolute;
   aspect-ratio: 1;
   z-index: -1;
@@ -25,7 +28,9 @@ $glitter-color: rgba(255, 255, 0);
   $right-overlap: 3;
 
   @for $i from 1 through $count {
-    $h-offset: random(ceil($width + $left-overlap + $right-overlap)) - $left-overlap + px; // Random horizontal offset up to 100px
+    $h-offset: random(ceil($width + $left-overlap + $right-overlap)) -
+      $left-overlap +
+      px; // Random horizontal offset up to 100px
     $v-offset: random(ceil($height)) + px; // Random vertical offset up to 100px
     $shadows: append($shadows, ($h-offset $v-offset $sparkle-color), comma);
   }
@@ -41,7 +46,7 @@ $glitter-color: rgba(255, 255, 0);
     $current-glitter: nth($glitter, $i);
     $current-color: nth($current-glitter, 3);
     $coords: nth($current-glitter, 1) nth($current-glitter, 2);
-    $max-opacity: random(75)/100;
+    $max-opacity: random(75) / 100;
     $new-alpha: if(random(100) <= $chance, $max-opacity, 0); // Opacity either on or off
     $new-glitter: append($new-glitter, $coords change-color($current-color, $alpha: $new-alpha), comma);
   }
@@ -56,7 +61,8 @@ $glitter-color: rgba(255, 255, 0);
   $fixed-glitter: generate-glitter(40, 22.83, 26);
 
   // step through the keyframes and calculate the transitional opacity
-  @for $i from 0 through ($total-frames) { // start with 0%
+  @for $i from 0 through ($total-frames) {
+    // start with 0%
     $frame: $i * $frame-increment;
 
     // process the opacity of the current glitter
