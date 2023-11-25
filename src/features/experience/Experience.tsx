@@ -1,10 +1,22 @@
+import localFont from "next/font/local";
 import styles from "./Experience.module.css";
+
+const tajawal = localFont({
+  src: "../../../public/assets/font/Tajawal/Tajawal-Light.ttf",
+  preload: true,
+});
+const balooChettan = localFont({
+  src: "../../../public/assets/font/BalooChettan/BalooChettan2-Regular.ttf",
+  preload: true,
+});
 
 export default function Experience() {
   return (
     <div className={styles.experience}>
-      <h3 className={styles.title}>Experience</h3>
-      <div>
+      <h3 className={`${styles.title} ${balooChettan.className}`}>
+        Experience
+      </h3>
+      <div className={tajawal.className}>
         With over a decade and a half of experience in front-end development, I
         have honed my skills in creating dynamic and responsive applications. My
         expertise lies in Vue, Angular, React, and TypeScript, coupled with a
