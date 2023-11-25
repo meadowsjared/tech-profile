@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 59rem;
+  max-width: 60rem;
   margin: 3.5rem auto 3.5rem;
   background: var(--color-surface-250);
   border-radius: var(--border-radius);
@@ -29,8 +29,9 @@
   max-width: var(--max-width);
   width: 100%;
   font-family: var(--font-mono);
-  gap: 1rem;
+  gap: 5rem;
   z-index: 0;
+  padding: 2rem 5rem 5rem;
 }
 
 @media (max-width: 800px) {
@@ -39,6 +40,6 @@
     margin: auto 0;
   }
   .body {
-    padding-bottom: 1rem;
+    padding: 1rem;
   }
 }
