@@ -2,12 +2,12 @@
   position: relative;
   display: inline-block;
   text-wrap: nowrap;
+  isolation: isolate;
 }
 
 .textStroke {
   display: inline-block;
   overflow: visible;
-  z-index: 100;
   margin-right: 0.09rem;
 }
 
