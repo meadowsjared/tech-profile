@@ -1,11 +1,11 @@
 .experience {
-  margin: 1rem;
+  padding: 1rem;
   font-size: 1.3rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 
   .title {
     font-size: 2rem;
+    padding-bottom: 1rem;
   }
 }
