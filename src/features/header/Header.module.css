@@ -25,6 +25,7 @@
   font-weight: 500;
   text-shadow: 2px 2px 2px #555;
   text-align: center; /* necessary for mobile */
+  padding-left: 0.438rem; /* adjust for J in Jared Meadows overflowing */
 }
 
 .title {
