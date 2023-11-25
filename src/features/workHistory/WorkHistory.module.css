@@ -1,14 +1,10 @@
-.main {
-  padding: 1rem;
+.title {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
 
-  .title {
-    font-size: 2rem;
-    padding-bottom: 1rem;
-  }
-
-  .jobs {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-  }
+.jobs {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
