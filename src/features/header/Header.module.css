@@ -3,6 +3,7 @@
   --bottom-overlap: 3rem;
   margin-bottom: calc(var(--bottom-overlap) * -1);
   position: relative;
+  z-index: 0;
 }
 
 @media (max-width: 550px) {
@@ -42,7 +43,6 @@
   width: 220px;
   overflow: hidden;
   display: flex;
-  z-index: 10;
   justify-content: center;
 }
 
