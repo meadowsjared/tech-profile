@@ -8,3 +8,9 @@
   gap: 2rem;
   flex-direction: column;
 }
+
+@media (max-width: 800px) {
+  .title {
+    padding-bottom: 3rem;
+  }
+}

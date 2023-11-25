@@ -26,6 +26,12 @@
   }
 }
 
+@media (max-width: 800px) {
+  .main {
+    border-radius: 0;
+  }
+}
+
 .left {
   display: flex;
   gap: 0.5rem;
