@@ -6,7 +6,7 @@
   background: var(--color-surface-250);
   border-radius: var(--border-radius);
   box-shadow: 2px 2px 5px var(--color-surface-600);
-  --card-border-radius-time: 0.5s;
+  --card-border-radius-time: 0.2s;
   transition: border-radius var(--card-border-radius-time) ease-in-out;
 }
 
