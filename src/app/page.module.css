@@ -6,6 +6,13 @@
   background: var(--color-surface-250);
   border-radius: var(--border-radius);
   box-shadow: 2px 2px 5px var(--color-surface-600);
+  --card-border-radius-time: 0.5s;
+  transition: border-radius var(--card-border-radius-time) ease-in-out;
+}
+
+.stickyTitleBar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .header {

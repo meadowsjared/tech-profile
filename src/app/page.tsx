@@ -8,11 +8,18 @@ import Experience from "@/features/experience/Experience";
 import Header from "@/features/header/Header";
 import TitleBar from "@/features/titleBar/TitleBar";
 import WorkHistory from "@/features/workHistory/WorkHistory";
+import { useState } from "react";
 
 export default function Page() {
+  const [isTitleBarSticky, setIsTitleBarSticky] = useState(false);
+
   return (
     <Provider store={store}>
-      <main className={styles.card}>
+      <main
+        className={`${styles.card} ${
+          isTitleBarSticky ? styles.stickyTitleBar : ""
+        }`}
+      >
         <TitleBar onStickyChange={setIsTitleBarSticky} />
         <Header />
         <div className={styles.body}>
