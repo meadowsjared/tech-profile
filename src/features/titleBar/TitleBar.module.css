@@ -7,6 +7,7 @@
   font-size: 0.9rem;
   background: var(--color-primary-300);
   color: var(--color-text-dark-bg);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 @media (max-width: 400px) {

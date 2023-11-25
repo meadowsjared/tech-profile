@@ -13,10 +13,8 @@ export default function Page() {
   return (
     <Provider store={store}>
       <main className={styles.card}>
-        <div className={styles.header}>
-          <TitleBar />
-          <Header />
-        </div>
+        <TitleBar onStickyChange={setIsTitleBarSticky} />
+        <Header />
         <div className={styles.body}>
           <About />
           <WorkHistory />
