@@ -2,6 +2,11 @@ import React, { ReactNode } from "react";
 import styles from "./Job.module.css";
 import Logo from "./Logo";
 import classNames from "classnames";
+import localFont from "next/font/local";
+const tajawal = localFont({
+  src: "../../../public/assets/font/Tajawal/Tajawal-Light.ttf",
+  preload: true,
+});
 
 export enum Side {
   left = "left",
@@ -57,7 +62,11 @@ export default function Job({
           </div>
         </div>
 
-        {children && <div className={styles.description}>{children}</div>}
+        {children && (
+          <div className={`${styles.description} ${tajawal.className}`}>
+            {children}
+          </div>
+        )}
       </div>
 
       {endorsements}
