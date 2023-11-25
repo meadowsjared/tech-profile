@@ -1,8 +1,6 @@
-.main {
+.card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   max-width: 59rem;
   margin: auto;
   background: var(--color-surface-250);
@@ -13,8 +11,15 @@
   box-shadow: 2px 2px 5px var(--color-surface-600);
 }
 
-.description {
-  display: inherit;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.body {
+  display: flex;
   flex-direction: column;
   justify-content: inherit;
   align-items: inherit;
@@ -26,11 +31,11 @@
 }
 
 @media (max-width: 800px) {
-  .main {
+  .card {
     border-radius: unset;
     margin: auto 0;
   }
-  .description {
+  .body {
     padding-bottom: 1rem;
   }
 }

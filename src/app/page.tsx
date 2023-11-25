@@ -12,10 +12,12 @@ import WorkHistory from "@/features/workHistory/WorkHistory";
 export default function Page() {
   return (
     <Provider store={store}>
-      <main className={styles.main}>
-        <div className={styles.description}>
+      <main className={styles.card}>
+        <div className={styles.header}>
           <TitleBar />
           <Header />
+        </div>
+        <div className={styles.body}>
           <About />
           <WorkHistory />
           <Experience />
