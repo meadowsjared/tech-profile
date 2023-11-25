@@ -9,7 +9,7 @@ export default function TitleBar() {
   );
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <div className={styles.left}>
         <Link href={linkedInLink}>LinkedIn</Link>·
         <Link href={githubLink}>GitHub</Link>
@@ -17,6 +17,6 @@ export default function TitleBar() {
       <a className={styles.right} href={`mailto:${email}`}>
         {email}
       </a>
-    </main>
+    </div>
   );
 }
