@@ -7,12 +7,15 @@ import styles from "./WorkHistory.module.css";
 
 export default function WorkHistory() {
   return (
-    <main className={styles.main}>
-      <Journeyage />
-      <Launchbadge />
-      <RSWebDeveloper />
-      <RSVisualBasic />
-      <JCSAndroidDeveloper />
-    </main>
+    <div className={styles.main}>
+      <h3 className={styles.title}>Work History</h3>
+      <div className={styles.jobs}>
+        <Journeyage />
+        <Launchbadge />
+        <RSWebDeveloper />
+        <RSVisualBasic />
+        <JCSAndroidDeveloper />
+      </div>
+    </div>
   );
 }
