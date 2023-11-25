@@ -1,4 +1,4 @@
-import style from "./MovingStars.module.scss";
+import styles from "./MovingStars.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { STAR_SPEED } from "@/store/constants";
 import {
@@ -164,9 +164,9 @@ export default function MovingStars() {
   }
 
   return (
-    <div className={style.movingStarsParent}>
+    <div className={styles.movingStarsParent}>
       <div
-        className={style.bg}
+        className={styles.bg}
         onMouseMove={handleMouseMove}
         onContextMenu={handleRightClick}
         onTouchMove={handleTouchMove}
@@ -176,7 +176,7 @@ export default function MovingStars() {
       >
         <div
           onTransitionEnd={applyPartialBgMovementVector}
-          className={style.backgroundControl}
+          className={styles.backgroundControl}
           style={{
             transform: `translate(${-translateBgTo.current
               .x}px, ${-translateBgTo.current.y}px)`,
@@ -185,7 +185,7 @@ export default function MovingStars() {
           ref={movingBgRef}
         >
           <Image
-            className={style.bgImage}
+            className={styles.bgImage}
             alt="background"
             src={stars}
             placeholder="blur"
@@ -193,17 +193,17 @@ export default function MovingStars() {
           />
         </div>
         <div
-          className={style.helmControl}
+          className={styles.helmControl}
           style={{
             transform: `translateX(${translateHelmTo.x}px) translateY(${translateHelmTo.y}px)`,
             transitionDuration: `${transitionHelmDuration}`,
           }}
           ref={movingHelmRef}
         >
-          <div className={style.starLayer}></div>
-          <div className={style.starLayer}></div>
-          <div className={style.starLayer}></div>
-          <div className={style.center}></div>
+          <div className={styles.starLayer}></div>
+          <div className={styles.starLayer}></div>
+          <div className={styles.starLayer}></div>
+          <div className={styles.center}></div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import style from "./Header.module.css";
+import styles from "./Header.module.css";
 import MovingStars from "../movingStars/MovingStars";
 import me from "../../../public/assets/img/me_large.webp";
 import meSmallBase64 from "../../../public/assets/img/me_small_base64";
@@ -16,15 +16,15 @@ export default function Header() {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <div className={style.header}>
-      <div className={style.background}>
+    <div className={styles.header}>
+      <div className={styles.background}>
         <MovingStars />
       </div>
-      <div className={style.headerContent}>
-        <h1 className={`${style.name} ${tajawal.className}`}>{user.name}</h1>
-        <h2 className={`${style.title} ${tajawal.className}`}>{user.title}</h2>
+      <div className={styles.headerContent}>
+        <h1 className={`${styles.name} ${tajawal.className}`}>{user.name}</h1>
+        <h2 className={`${styles.title} ${tajawal.className}`}>{user.title}</h2>
         <div className="column heading-column content-column">
-          <div className={style.me}>
+          <div className={styles.me}>
             <Image
               alt={user.name}
               src={me}
