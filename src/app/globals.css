@@ -13,12 +13,12 @@
   --color-primary-900: #f5eeff;
   --color-primary-1000: #ffffff;
   --color-text-dark-bg: #ffffff;
-  --color-text-light-bg: #000000;
+  --color-text-light-bg: #020202;
 
   /** CSS DARK THEME SURFACE COLORS */
-  --color-surface-100: #000000;
+  --color-surface-100: #020202;
   --color-surface-200: #1e1e1e;
-  --color-surface-250: #2b2b2b;
+  --color-surface-250: #272C36;
   --color-surface-300: #353535;
   --color-surface-400: #4e4e4e;
   --color-surface-500: #696969;
@@ -51,9 +51,9 @@
   --max-width: 1100px;
   --font-mono: 'Tajawal',sans-serif;
 
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 221, 221, 221;
-  --background-end-rgb: 150, 150, 150;
+  --foreground-rgb: #c0c3cf;
+  --background-start-rgb: #C0C3CF;
+  --background-end-rgb: #858ba3;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -88,8 +88,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 20, 20, 20;
+    --background-start-rgb: #020202;
+    --background-end-rgb: #071021;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
@@ -125,13 +125,13 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #c0c3cf;
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      var(--background-end-rgb)
     )
-    rgb(var(--background-start-rgb));
+    var(--background-start-rgb);
 }
 
 a {
