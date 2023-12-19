@@ -19,7 +19,7 @@ export default function Experience() {
       <div className={tajawal.className}>
         With over a decade and a half of experience in front-end development, I
         have honed my skills in creating dynamic and responsive applications. My
-        expertise lies in Vue, Angular, React, and TypeScript, coupled with a
+        expertise lies in React, Angular, Vue, and TypeScript, coupled with a
         strong foundation in HTML, CSS, SCSS, and JavaScript. This diverse skill
         set has enabled me to build robust and efficient web applications across
         various domains. My work often involves integrating complex server-side

@@ -25,7 +25,7 @@ export default function Journeyage() {
           {companyName}
         </Link>
         , I&rsquo;ve been pivotal in enhancing and modernizing our educational
-        platform&rsquo;s app using Vue2.7, TypeScript, and SCSS. My
+        platform&rsquo;s app using Next9, TypeScript, and SCSS. My
         responsibilities have included a comprehensive refactoring of the app,
         managing server infrastructure via AWS, and leading product releases to
         ensure high quality and timely delivery. Alongside technical

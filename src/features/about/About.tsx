@@ -42,8 +42,8 @@ export default function About() {
           , I&apos;ve played a pivotal role in future-proofing our application.
           Faced with the imminent deprecation of NodeJSv12 and potential server
           shutdowns, I led the initiative to upgrade our app to the more
-          advanced Nuxtv2.15 with Vue2.7. This strategic move not only made our
-          app forward compatible with Nuxt3-style components but also ensured
+          advanced Next9 with React16. This strategic move not only made our app
+          forward compatible with Nuxt3-style components but also ensured
           compatibility with the latest NodeJSv18, safeguarding our server
           infrastructure against potential disruptions. This critical upgrade
           has not only enhanced the app&apos;s performance and longevity but
@@ -83,14 +83,15 @@ export default function About() {
           <Link href="https://launchbadge.com/" target="launchbadge">
             LaunchBadge
           </Link>
-          , architecting responsive Vue3 applications that stood as a testament
-          to the fusion of form and function, inspired by Figma designs and
-          client aspirations. There, I also embraced the role of mentor, guiding
-          seven junior developers through the intricacies of Vue and Typescript.
+          , architecting responsive React17 applications that stood as a
+          testament to the fusion of form and function, inspired by Figma
+          designs and client aspirations. There, I also embraced the role of
+          mentor, guiding seven junior developers through the intricacies of
+          React and Typescript.
         </p>
         <p>
           My toolkit is the product of deep front-end expertise, blending the
-          dynamic capabilities of Vue with the structural might of{" "}
+          dynamic capabilities of React with the structural might of{" "}
           <Link href="https://angular.io/" target="angular">
             Angular
           </Link>
