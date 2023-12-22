@@ -1,8 +1,8 @@
-/** @type {import('next').NextConfig} */
+const outputExport = process.env.NEXT_PUBLIC_OUTPUT_EXPORT !== "false";
+
 const nextConfig = {
-  output: "export",
   basePath: "/resume",
-  // images: { unoptimized: true },
+  ...(outputExport ? { output: "export" } : {}),
 };
 
 module.exports = nextConfig;
