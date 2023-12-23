@@ -4,7 +4,7 @@ import Journeyage from "./Journeyage";
 import Launchbadge from "./Launchbadge";
 import RSVisualBasic from "./RSVisualBasic";
 import RSWebDeveloper from "./RSWebDeveloper";
-import styles from "./WorkHistory.module.css";
+import styles from "./WorkHistory.module.scss";
 
 const balooChettan = localFont({
   src: "../../../public/assets/font/BalooChettan/BalooChettan2-Regular.ttf",

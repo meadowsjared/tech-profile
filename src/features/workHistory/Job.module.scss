@@ -1,3 +1,5 @@
+@import "../../app/globals";
+
 .Job {
   display: flex;
   gap: 1.875rem;
@@ -34,7 +36,7 @@
   margin-bottom: 5px !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: $breakpoint-medium) {
   .Job {
     display: block;
   }

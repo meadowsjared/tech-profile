@@ -1,3 +1,5 @@
+@import "../../app/globals";
+
 .title {
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -9,7 +11,7 @@
   flex-direction: column;
 }
 
-@media (max-width: 800px) {
+@media (max-width: $breakpoint-medium) {
   .title {
     padding-bottom: 3rem;
   }

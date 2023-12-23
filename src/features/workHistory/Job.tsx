@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from "./Job.module.css";
+import styles from "./Job.module.scss";
 import Logo from "./Logo";
 import classNames from "classnames";
 import localFont from "next/font/local";

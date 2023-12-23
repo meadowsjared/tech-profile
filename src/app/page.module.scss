@@ -1,9 +1,26 @@
+@import "./globals";
+
 .row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
+.side {
+  flex: 1;
+}
+
+.left {
+  z-index: -1;
+  z-index: 2;
+}
+
+.right {
+  z-index: -2;
+  z-index: 1;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -41,19 +58,33 @@
   padding: 2rem 5rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: $breakpoint-medium) {
   .card {
-    border-radius: unset;
+    /* border-radius: unset; */
     margin: auto 0;
     border-radius: 0;
   }
   .body {
     padding: 2rem 3rem 2rem 1.25rem;
   }
+  /* .body * {
+    max-width: 100%;
+  } */
 }
 
 @media (max-width: 267px) {
   .body {
     padding: 2rem 1.25rem 2rem 1.25rem;
+  }
+}
+
+/**
+* The rocket is snapped to the left and right sides of the screen
+* when the screen width is
+* between 1100 and 980
+*/
+@media (max-width: 1100px) {
+  .rocket {
+    /* flex-grow: unset; */
   }
 }

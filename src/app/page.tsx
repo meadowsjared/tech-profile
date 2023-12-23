@@ -2,7 +2,7 @@
 
 import { Provider } from "react-redux";
 import { store } from "../store/store";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import About from "@/features/about/About";
 import Experience from "@/features/experience/Experience";
 import Header from "@/features/header/Header";

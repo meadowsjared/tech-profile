@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./TitleBar.module.css";
+import styles from "./TitleBar.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
