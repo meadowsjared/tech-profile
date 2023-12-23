@@ -1,8 +1,15 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .card {
   display: flex;
   flex-direction: column;
   max-width: 60rem;
-  margin: 3.5rem auto 3.5rem;
+  margin: 3.5rem 0;
+  flex-grow: 1;
   background: var(--color-surface-250);
   border-radius: var(--border-radius);
   box-shadow: 2px 2px 5px var(--color-surface-600);
@@ -31,15 +38,22 @@
   font-family: var(--font-mono);
   gap: 5rem;
   z-index: 0;
-  padding: 2rem 5rem 5rem;
+  padding: 2rem 5rem;
 }
 
 @media (max-width: 800px) {
   .card {
     border-radius: unset;
     margin: auto 0;
+    border-radius: 0;
   }
   .body {
-    padding: 1rem;
+    padding: 2rem 3rem 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 267px) {
+  .body {
+    padding: 2rem 1.25rem 2rem 1.25rem;
   }
 }

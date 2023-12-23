@@ -15,19 +15,21 @@ export default function Page() {
 
   return (
     <Provider store={store}>
-      <main
-        className={`${styles.card} ${
-          isTitleBarSticky ? styles.stickyTitleBar : ""
-        }`}
-      >
-        <TitleBar onStickyChange={setIsTitleBarSticky} />
-        <Header />
-        <div className={styles.body}>
-          <About />
-          <WorkHistory />
-          <Experience />
-        </div>
-      </main>
+      <div className={styles.row}>
+        <main
+          className={`${styles.card} ${
+            isTitleBarSticky ? styles.stickyTitleBar : ""
+          }`}
+        >
+          <TitleBar onStickyChange={setIsTitleBarSticky} />
+          <Header />
+          <div className={styles.body}>
+            <About />
+            <WorkHistory />
+            <Experience />
+          </div>
+        </main>
+      </div>
     </Provider>
   );
 }
