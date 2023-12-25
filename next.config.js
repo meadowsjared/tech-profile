@@ -9,4 +9,10 @@ const nextConfig = {
   basePath: "/resume",
 };
 
-module.exports = outputExport ? nextConfigOutput : nextConfig;
+if (outputExport) {
+  console.log("nextConfigOutput", outputExport);
+  module.exports = nextConfigOutput;
+} else {
+  console.log("outputExport", outputExport);
+  module.exports = nextConfig;
+}
