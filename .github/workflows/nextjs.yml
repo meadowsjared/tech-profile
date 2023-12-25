@@ -65,6 +65,9 @@ jobs:
             exit 1
           fi
 
+      - name: Use production Next.js config
+        run: mv next.config.production.js next.config.js
+
       # Install bun globally if detected
       - name: Install bun
         run: |
@@ -105,9 +108,6 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx', '**/*.css') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
-
-      - name: Use production Next.js config
-        run: mv next.config.production.js next.config.js
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
