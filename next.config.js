@@ -1,8 +1,12 @@
 const outputExport = process.env.NEXT_PUBLIC_OUTPUT_EXPORT !== "false";
 
-const nextConfig = {
+const nextConfigOutput = {
   basePath: "/resume",
-  ...(outputExport ? { output: "export" } : {}),
+  output: "export",
 };
 
-module.exports = nextConfig;
+const nextConfig = {
+  basePath: "/resume",
+};
+
+module.exports = outputExport ? nextConfigOutput : nextConfig;
