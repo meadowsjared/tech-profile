@@ -1,5 +1,5 @@
 const nextConfig = {
-  basePath: "/resume",
+  basePath: "/tech-profile",
 };
 
 module.exports = nextConfig;

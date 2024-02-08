@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Job, { Side } from "./Job";
-const jaLogo = "/resume/assets/img/journeyage - stacked.svg";
+const jaLogo = "/tech-profile/assets/img/journeyage - stacked.svg";
 const companyName = "Journeyage";
 const companyHref = "https://www.journeyage.com/";
 

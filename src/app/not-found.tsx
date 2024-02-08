@@ -25,7 +25,7 @@ export default function NotFound() {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="shortcut icon" href="/resume/favicon.ico" />
+        <link rel="shortcut icon" href="/tech-profile/favicon.ico" />
       </Head>
       <div className={styles.content}>
         <div

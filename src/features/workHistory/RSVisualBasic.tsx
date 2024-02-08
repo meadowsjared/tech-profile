@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Job, { Side } from "./Job";
-const lbLogo = "/resume/assets/img/r&s engineers_dark_mode.png";
+const lbLogo = "/tech-profile/assets/img/r&s engineers_dark_mode.png";
 const companyName = "R&S Engineers";
 const companyHref = "https://www.rscivil.com/";
 

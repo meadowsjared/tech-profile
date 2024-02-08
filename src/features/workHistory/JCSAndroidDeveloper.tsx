@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Job, { Side } from "./Job";
-const lbLogo = "/resume/assets/img/tca_logo.png";
+const lbLogo = "/tech-profile/assets/img/tca_logo.png";
 const companyName = "R&S Engineers";
 const companyHref =
   "https://play.google.com/store/apps/developer?id=Jared%27s+Coding+Shack";
