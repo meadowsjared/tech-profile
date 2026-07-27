@@ -5,7 +5,7 @@ import { RootState } from "@/store/store";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface Props {
-  onStickyChange: Dispatch<SetStateAction<boolean>>;
+  onStickyChange?: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function TitleBar(props: Readonly<Props>) {
@@ -18,7 +18,7 @@ export default function TitleBar(props: Readonly<Props>) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        props.onStickyChange(!entry.isIntersecting); // Update parent state
+        props.onStickyChange?.(!entry.isIntersecting); // Update parent state
         setIsSticky(!entry.isIntersecting);
       },
       { threshold: [1] },

@@ -4,25 +4,55 @@ import { RootState } from "@/store/store";
 import { UserState } from "@/features/user/userSlice";
 import { useSelector } from "react-redux";
 
-interface MockedUseSelector {
-  useSelector: { mockImplementation: typeof useSelector };
+import "@testing-library/jest-dom";
+
+if (typeof document === "undefined") {
+  const { JSDOM } = require("jsdom");
+  const jsdom = new JSDOM("<!doctype html><html><body></body></html>", {
+    url: "http://localhost/",
+  });
+  const { window } = jsdom;
+  (globalThis as any).window = window;
+  (globalThis as any).document = window.document;
+  (globalThis as any).navigator = window.navigator;
+  (globalThis as any).HTMLElement = window.HTMLElement;
+  (globalThis as any).Element = window.Element;
+  (globalThis as any).Node = window.Node;
 }
 
 // Mock the useSelector hook from react-redux
-jest.mock("react-redux", () => ({
-  ...jest.requireActual("react-redux"),
-  useSelector: jest.fn(),
-}));
+jest.mock("react-redux", () => {
+  const actual =
+    typeof jest !== "undefined" && typeof jest.requireActual === "function"
+      ? jest.requireActual("react-redux")
+      : {};
+  return {
+    ...actual,
+    useSelector: jest.fn(),
+  };
+});
 
-// Declare mock function
-const mockUseSelector =
-  jest.requireMock<MockedUseSelector>("react-redux").useSelector;
+const mockUseSelector = useSelector as unknown as jest.Mock;
 
 describe("TitleBar", () => {
   let renderResult: RenderResult;
   let mockState: RootState;
 
   beforeEach(() => {
+    // Mock IntersectionObserver for JSDOM / Bun test environment
+    const mockObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+
+    if (typeof window !== "undefined") {
+      window.IntersectionObserver = mockObserver;
+    }
+    if (typeof globalThis !== "undefined") {
+      (globalThis as unknown as { IntersectionObserver: unknown }).IntersectionObserver = mockObserver;
+    }
+
     // Mock the Redux store state
     mockState = {
       user: {
